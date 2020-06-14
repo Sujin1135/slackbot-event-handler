@@ -1,0 +1,7 @@
+/venv
+/node_modules
+/.idea
+/onboarding_tutorial.py
+/package.json
+/package-lock.json
+/.serverless
