@@ -10,7 +10,7 @@ class Sender(object):
         self.channel = channel
 
     def open_user(self, user_id: str):
-        self.web_client.im_open(user_id)
+        self.web_client.im_open(user=user_id)
 
     def send_message(self, *message: dict):
         message_request = self._make_message(*message)
