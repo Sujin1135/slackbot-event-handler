@@ -3,7 +3,8 @@ import os
 from flask import Flask
 from flask_slack import SlackManager
 
-from src.enums.message_response import get_response_by_text
+from src.message_form.get_response_by_text import get_response_by_text
+from src.message_form.message_response import MessageResponse
 from src.sender import Sender
 
 token = os.environ['SLACK_API_TOKEN']
@@ -26,8 +27,10 @@ def reaction_added(event_data):
 def give_welcoming(sender, data, **extra):
     event = data['event']
     user_id = event.get("user", {}).get("id")
-    response = message_sender.open_user(user_id)
-    return response
+    message_sender.open_user(user_id)
+
+    welcome_message = MessageResponse.WELCOME.value
+    message_sender.send_message(welcome_message)
 
 
 @slack_manager.on("message")
