@@ -1,0 +1,7 @@
+{
+  "type": "section",
+  "text": {
+    "type": "mrkdwn",
+    "text": "Welcome to Slack! :wave: We're so glad you're here. :blush:\n\n *Here's a chat room for developers:*"
+  }
+}
