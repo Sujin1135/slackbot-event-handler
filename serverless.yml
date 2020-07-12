@@ -26,7 +26,7 @@ provider:
   logRetentionInDays: 30
   environment:
     CONFIG: ${opt:stage, 'dev'}
-    CHANNEL: 'bot_test2'
+    CHANNEL: ${opt:channel, 'bot_test2'}
     SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
     SLACK_API_TOKEN: ${env:SLACK_API_TOKEN}
 
